@@ -23,27 +23,27 @@
             <link rel="stylesheet" href="./fonts/open-sans.css" />        </head>
 
         <body>
-            <div class="site-wrap">
+        <div class="site-wrap">
 
-                <a href="#" id="menu-btn" class="offcanvas-toggle js-offcanvas-toggle btn btn-sm btn-outline-white nav-down">Menu</a>
+            <a href="#" id="menu-btn" class="offcanvas-toggle js-offcanvas-toggle btn btn-sm btn-outline-white nav-down">Menu</a>
 
-                <div class="offcanvas_menu" id="offcanvas_menu">
-                    <ul class="mb-5">
-                        <li class=""><a href=".">Home</a></li>
-                        <li class=""><a href="./biography.html">Biography</a></li>
-                        <li class=""><a href="./onehundred.html">100th Birthday Celebration</a></li>
-                        <li class=""><a href="./media.html">Media & Resources</a></li>
-                        <li class="active"><a href="./contact.html">Contact & Webmaster</a></li>
-                    </ul>
+            <div class="offcanvas_menu" id="offcanvas_menu">
+                <ul class="mb-5">
+                    <li class=""><a href=".">Home</a></li>
+                    <li class=""><a href="./biography.html">Biography</a></li>
+                    <li class=""><a href="./onehundred.html">100th Birthday Celebration</a></li>
+                    <li class=""><a href="./media.html">Media & Resources</a></li>
+                    <li class="active"><a href="./contact.html">Contact & Webmaster</a></li>
+                </ul>
 
-                    </br>
-                </div>
+                </br>
+            </div>
 
-                <aside style="background-image: url('img/profile_big.jpg');"></aside>
+            <aside style="background-image: url('img/profile_big.jpg');"></aside>
 
-                <main>
-                    
-                      <div class="form-group">
+            <main>
+                
+        <div class="form-group">
     
     <h1 class="mb-5">About the Webmaster</h1>
     <ul class="resume-list">
@@ -81,7 +81,7 @@
   <div class="form-group">
 
     <h1 class="mb-5">Contact Form</h1>
-    <form method="POST" action="./submitForm">
+    <form id="contactForm" method="POST" action="./submitForm">
     <input type="hidden" name="_token" value="zM2eRdc386aud9JC7Qe2PKodYuY5qmkrFarrcCkv">
     <div class="row mb-4">
       <div class="col-md-12">
@@ -109,29 +109,37 @@
 
     <div class="row">
       <div class="col-md-12">
-        <input type="submit" class="btn btn-primary btn-block" value="Send Message">
+        <button class="g-recaptcha btn btn-primary btn-block" 
+        data-sitekey="6Leeq0MfAAAAAJBTnTjIdTYYIKB3e9FPosnWyU6L" 
+        data-callback='onSubmit' 
+        data-action='submit' value="Send Message">Send Message</button>
       </div>
     </div>
 
     </form>
 
   </div>
-                </main>
+  </main>
 
-            </div>
+</div>
 
-            <!-- loader -->
-            <div id="loader" class="show fullscreen">
-                <svg class="circular" width="48px" height="48px">
-                    <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
-                    <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/>
-                </svg>
-            </div>
+<!-- loader -->
+<div id="loader" class="show fullscreen">
+  <svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/>
+  </svg>
+</div>
 
-        </body>
+</body>
 
-        
-        <script src="./js/jquery-3.2.1.min.js"></script>
-        <script src="./js/popper.min.js"></script>
-        <script src="./js/bootstrap.min.js"></script>
-        <script src="./js/main.js"></script></html>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+  function onSubmit(token) {
+    document.getElementById("contactForm").submit();
+  }
+</script>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script src="./js/popper.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/main.js"></script></html>
